@@ -4,12 +4,12 @@ export function Spiral(props: {weight?: number, size?: number, startDegree?: num
   const weight = props.weight ?? 5
   const size = props.size ?? 12
   const startDegree = props.startDegree ?? 0
-  const endDegree = props.endDegree ?? 360 * 8
+  const endDegree = props.endDegree ?? 360 * 4
 
   return (
     <>
       {
-        [...Array(endDegree).keys()].map(deg => {
+        [...Array(endDegree * 2).keys()].map(deg => {
           if (deg <= startDegree) { return }
           
           const theta = (deg / 2) * Math.PI / 180

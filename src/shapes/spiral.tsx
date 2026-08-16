@@ -16,6 +16,7 @@ export function Spiral(props: {weight?: number, size?: number, startDegree?: num
 
           return (
             <Dot
+              key={deg}
               diameter={weight}
               y={size * theta * Math.sin(theta)}
               x={size * theta * Math.cos(theta)}

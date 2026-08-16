@@ -18,6 +18,7 @@ export function XLine(props: {x0: number, x1: number, y?: number, weight?: numbe
         ).map(value => {
           return (
             <Dot
+              key={value}
               diameter={weight}
               x={value}
               y={yval}
@@ -30,6 +31,8 @@ export function XLine(props: {x0: number, x1: number, y?: number, weight?: numbe
 }
 
 function linspace(startValue: number, stopValue: number, cardinality: number) {
+  startValue = Math.round(startValue)
+  stopValue = Math.round(stopValue)
   var arr = []
   var step = (stopValue - startValue) / (cardinality - 1)
   for (var i = 0; i < cardinality; i++) {
@@ -47,10 +50,10 @@ export function Line(props: {
 }) {
   const weight = props.weight ?? 5
 
-  let [x0, x1] = [props.x0, props.x1]
+  let [x0, x1] = [Math.round(props.x0), Math.round(props.x1)]
   if (x0 > x1) { [x0, x1] = [x1, x0] }
 
-  let [y0, y1] = [props.y0, props.y1]
+  let [y0, y1] = [Math.round(props.y0), Math.round(props.y1)]
   if (y0 > y1) { [y0, y1] = [y1, y0] }
 
   const numStepsX = x1 - x0
@@ -66,6 +69,7 @@ export function Line(props: {
         [...Array(numSteps).keys()].map(ix => {
           return (
             <Dot
+              key={ix}
               diameter={weight}
               x={xValues[ix]}
               y={yValues[ix]}

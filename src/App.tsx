@@ -7,14 +7,19 @@ const spiralSize = 12
 
 const numSpokes = 8
 
+export const center = {
+    x: window.outerWidth / 2,
+    y: window.outerHeight / 2
+  }
+export const offset = {
+  x: -18,
+  y: -43
+}
+
 function App() {
-  const endTheta = (spiralEndDegree * Math.PI / 180)
-  const endBarX = spiralSize * endTheta * Math.cos(endTheta)
 
   return (
     <>
-      <XLine x0={0} x1={-38}/>
-      <XLine x0={endBarX - spiralSize * 6} x1={endBarX}/>
       <Spiral
         size={spiralSize}
         startDegree={spiralStartDegree}

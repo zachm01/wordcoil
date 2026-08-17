@@ -30,14 +30,24 @@ export function XLine(props: {x0: number, x1: number, y?: number, weight?: numbe
   )
 }
 
-function linspace(startValue: number, stopValue: number, cardinality: number) {
-  startValue = Math.round(startValue)
-  stopValue = Math.round(stopValue)
-  var arr = []
-  var step = (stopValue - startValue) / (cardinality - 1)
-  for (var i = 0; i < cardinality; i++) {
-    arr.push(startValue + (step * i))
+export function linspace(startValue: number, stopValue: number, cardinality: number) {
+  let start = Math.round(startValue)
+  let stop = Math.round(stopValue)
+
+  let reversed = false
+  
+  if (stop < start) {
+    stop = [start, start = stop][0];
+    reversed = true
   }
+
+  var arr = []
+  var step = (stop - start) / (cardinality - 1)
+  for (var i = 0; i < cardinality; i++) {
+    arr.push(start + (step * i))
+  }
+  if (reversed)
+    return arr.reverse()
   return arr;
 }
 
@@ -51,13 +61,10 @@ export function Line(props: {
   const weight = props.weight ?? 5
 
   let [x0, x1] = [Math.round(props.x0), Math.round(props.x1)]
-  if (x0 > x1) { [x0, x1] = [x1, x0] }
-
   let [y0, y1] = [Math.round(props.y0), Math.round(props.y1)]
-  if (y0 > y1) { [y0, y1] = [y1, y0] }
 
-  const numStepsX = x1 - x0
-  const numStepsY = y1 - y0
+  const numStepsX = Math.abs(x1 - x0)
+  const numStepsY = Math.abs(y1 - y0)
   const numSteps = Math.max(numStepsX, numStepsY)
 
   const xValues = linspace(x0, x1, numSteps)
@@ -69,6 +76,7 @@ export function Line(props: {
         [...Array(numSteps).keys()].map(ix => {
           return (
             <Dot
+              color="#ff0000"
               key={ix}
               diameter={weight}
               x={xValues[ix]}

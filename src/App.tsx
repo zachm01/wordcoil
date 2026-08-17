@@ -1,3 +1,4 @@
+import { Letter } from "./shapes/letter"
 import { XLine, Line, linspace } from "./shapes/line"
 import { Spiral } from "./shapes/spiral"
 
@@ -40,6 +41,8 @@ function App() {
           )
         })
       }
+      
+      <Letter char="M" x={0} y={0}/>
     </>
   )
 }

@@ -76,7 +76,7 @@ export function Line(props: {
         [...Array(numSteps).keys()].map(ix => {
           return (
             <Dot
-              color="#ff0000"
+              color="#000"
               key={ix}
               diameter={weight}
               x={xValues[ix]}

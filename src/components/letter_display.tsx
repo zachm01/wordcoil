@@ -1,5 +1,5 @@
-import { Letter } from "./shapes/letter"
-import { puzzleParams, range } from "./math"
+import { Letter } from "../shapes/letter"
+import { puzzleParams, range } from "../math"
 
 export function LetterDisplay(props: {longWord: string}) {
   const degreeStep = 360 / puzzleParams.numSpokes

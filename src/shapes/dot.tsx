@@ -1,7 +1,16 @@
 import { center, offset } from "../App"
 
-export function Dot(props: {diameter: number, x: number, y: number, color?: string}) {
+export function Dot(props: {
+  diameter: number,
+  x: number,
+  y: number,
+  color?: string,
+  center?: {x: number, y: number},
+  offset?: {x: number, y: number}
+}) {
   const radius = props.diameter / 2
+  const centerCoords = props.center ?? center
+  const offsetCoords = props.offset ?? offset
 
   return (
     <div
@@ -12,8 +21,8 @@ export function Dot(props: {diameter: number, x: number, y: number, color?: stri
         "position": "absolute",
         "height": props.diameter,
         "width": props.diameter,
-        "left": center.x + props.x - radius + offset.x,
-        "top": center.y - props.y - radius + offset.y
+        "left": centerCoords.x + props.x - radius + offsetCoords.x,
+        "top": centerCoords.y - props.y - radius + offsetCoords.y
       }}
     />
   )

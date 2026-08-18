@@ -4,7 +4,7 @@ import { XLine, Line, linspace } from "./shapes/line"
 import { Spiral } from "./shapes/spiral"
 
 const spiralEndDegree = 360 * 4
-const spiralStartDegree = 360 + 270
+const spiralStartDegree = 270
 const spiralSize = 12
 
 const numSpokes = 8
@@ -24,6 +24,31 @@ function range(start: number, stop: number, step?: number) {
     Math.ceil((stop - start) / increment)
   ).fill(start)
    .map((x, y) => x + y * increment)
+}
+
+
+function DispLetters() {
+  const degreeStep = 360 / numSpokes
+
+  return (
+    <>
+      {
+        range(spiralStartDegree, spiralEndDegree, degreeStep).map(deg => {
+          const theta = (deg + degreeStep / 2) * Math.PI / 180
+
+          return (
+            <Dot
+              key={deg}
+              diameter={20}
+              x={(spiralSize * theta - 40) * Math.cos(theta)}
+              y={(spiralSize * theta - 40) * Math.sin(theta)}
+              color="#f00"
+            />
+          ) 
+        })
+      }
+    </>
+  )
 }
 
 
@@ -52,6 +77,7 @@ function App() {
         })
       }
 
+      <DispLetters/>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { center, offset } from "../App"
+import { center, offset } from "../math"
 import type { DotProps } from "./types"
 
 export function Dot(props: DotProps) {

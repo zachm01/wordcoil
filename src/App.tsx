@@ -1,33 +1,7 @@
 import { LetterDisplay } from "./letter_display"
-import { Line, linspace } from "./shapes/line"
+import { Line } from "./shapes/line"
 import { Spiral } from "./shapes/spiral"
-import type { PuzzleParameters } from "./types"
-
-
-export const puzzleParams: PuzzleParameters = {
-  spiralStartDegree: 360,
-  spiralEndDegree: 360 * 4,
-  spiralSize: 12,
-  numSpokes: 8
-}
-
-export const center = {
-  x: window.outerWidth / 2,
-  y: window.outerHeight / 2
-}
-export const offset = {
-  x: -18,
-  y: -43
-}
-
-export function range(start: number, stop: number, step?: number) {
-  const increment = step ?? 1
-  return Array(
-    Math.ceil((stop - start) / increment)
-  ).fill(start)
-   .map((x, y) => x + y * increment)
-}
-
+import { puzzleParams, linspace } from "./math"
 
 
 function App() {

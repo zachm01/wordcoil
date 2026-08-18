@@ -1,4 +1,4 @@
-import { center, offset } from "../App"
+import { center, offset } from "../math"
 import type { LetterProps } from "./types"
 
 const DIAMETER = 30

@@ -1,4 +1,5 @@
 import { Dot } from "./dot"
+import { linspace } from "../math"
 import type { LineProps } from "./types"
 
 export function XLine(props: {x0: number, x1: number, y?: number, weight?: number}) {
@@ -29,27 +30,6 @@ export function XLine(props: {x0: number, x1: number, y?: number, weight?: numbe
       }
     </>
   )
-}
-
-export function linspace(startValue: number, stopValue: number, cardinality: number) {
-  let start = Math.round(startValue)
-  let stop = Math.round(stopValue)
-
-  let reversed = false
-  
-  if (stop < start) {
-    stop = [start, start = stop][0];
-    reversed = true
-  }
-
-  var arr = []
-  var step = (stop - start) / (cardinality - 1)
-  for (var i = 0; i < cardinality; i++) {
-    arr.push(start + (step * i))
-  }
-  if (reversed)
-    return arr.reverse()
-  return arr;
 }
 
 export function Line(props: LineProps) {

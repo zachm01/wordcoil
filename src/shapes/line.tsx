@@ -1,4 +1,5 @@
 import { Dot } from "./dot"
+import type { LineProps } from "./types"
 
 export function XLine(props: {x0: number, x1: number, y?: number, weight?: number}) {
   const weight = props.weight ?? 5
@@ -51,13 +52,7 @@ export function linspace(startValue: number, stopValue: number, cardinality: num
   return arr;
 }
 
-export function Line(props: {
-  x0: number,
-  x1: number,
-  y0: number,
-  y1: number,
-  weight?: number
-}) {
+export function Line(props: LineProps) {
   const weight = props.weight ?? 5
 
   let [x0, x1] = [Math.round(props.x0), Math.round(props.x1)]

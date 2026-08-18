@@ -1,20 +1,15 @@
 import { center, offset } from "../App"
+import type { LetterProps } from "./types"
 
 const DIAMETER = 30
 
-export function Letter(props: {
-  char: string,
-  x: number,
-  y: number,
-  center?: {x: number, y: number},
-  offset?: {x: number, y: number}
-}) {
+export function Letter(props: LetterProps) {
   const centerCoords = props.center ?? center
   const offsetCoords = props.offset ?? offset
 
   return (
     <div
-      className="flex justify-center items-center rounded-full bg-blue-100 hover:bg-blue-200"
+      className="flex justify-center items-center rounded-full bg-blue-100 hover:bg-blue-200 cursor-pointer"
       style={{
         "position": "absolute",
         "height": DIAMETER,

@@ -1,6 +1,7 @@
 import { Dot } from "./dot"
+import type { SpiralProps } from "./types"
 
-export function Spiral(props: {weight?: number, size?: number, startDegree?: number, endDegree?: number}) {
+export function Spiral(props: SpiralProps) {
   const weight = props.weight ?? 5
   const size = props.size ?? 12
   const startDegree = props.startDegree ?? 0

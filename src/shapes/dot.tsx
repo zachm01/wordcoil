@@ -1,13 +1,7 @@
 import { center, offset } from "../App"
+import type { DotProps } from "./types"
 
-export function Dot(props: {
-  diameter: number,
-  x: number,
-  y: number,
-  color?: string,
-  center?: {x: number, y: number},
-  offset?: {x: number, y: number}
-}) {
+export function Dot(props: DotProps) {
   const radius = props.diameter / 2
   const centerCoords = props.center ?? center
   const offsetCoords = props.offset ?? offset

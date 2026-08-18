@@ -1,10 +1,9 @@
-import { Dot } from "./shapes/dot"
 import { Letter } from "./shapes/letter"
-import { XLine, Line, linspace } from "./shapes/line"
+import { Line, linspace } from "./shapes/line"
 import { Spiral } from "./shapes/spiral"
 
 const spiralEndDegree = 360 * 4
-const spiralStartDegree = 270
+const spiralStartDegree = 360
 const spiralSize = 12
 
 const numSpokes = 8
@@ -37,12 +36,11 @@ function DispLetters() {
           const theta = (deg + degreeStep / 2) * Math.PI / 180
 
           return (
-            <Dot
+            <Letter
               key={deg}
-              diameter={20}
+              char="M"
               x={(spiralSize * theta - 40) * Math.cos(theta)}
               y={(spiralSize * theta - 40) * Math.sin(theta)}
-              color="#f00"
             />
           ) 
         })

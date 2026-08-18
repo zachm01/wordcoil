@@ -11,6 +11,7 @@ export interface LetterProps {
   char: string,
   x: number,
   y: number,
+  bgColor?: string,
   center?: {x: number, y: number},
   offset?: {x: number, y: number}
 }

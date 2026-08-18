@@ -9,9 +9,10 @@ export function Letter(props: LetterProps) {
 
   return (
     <div
-      className="flex justify-center items-center rounded-full bg-blue-100 hover:bg-blue-200 cursor-pointer"
+      className="flex justify-center items-center rounded-full cursor-pointer"
       style={{
         "position": "absolute",
+        "backgroundColor": props.bgColor ?? "#dbeafe",
         "height": DIAMETER,
         "width": DIAMETER,
         "left": centerCoords.x + props.x - DIAMETER / 2 + offsetCoords.x,

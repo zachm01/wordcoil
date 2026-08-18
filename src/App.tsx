@@ -1,3 +1,4 @@
+import { Dot } from "./shapes/dot"
 import { Letter } from "./shapes/letter"
 import { XLine, Line, linspace } from "./shapes/line"
 import { Spiral } from "./shapes/spiral"
@@ -9,13 +10,22 @@ const spiralSize = 12
 const numSpokes = 8
 
 export const center = {
-    x: window.outerWidth / 2,
-    y: window.outerHeight / 2
-  }
+  x: window.outerWidth / 2,
+  y: window.outerHeight / 2
+}
 export const offset = {
   x: -18,
   y: -43
 }
+
+function range(start: number, stop: number, step?: number) {
+  const increment = step ?? 1
+  return Array(
+    Math.ceil((stop - start) / increment)
+  ).fill(start)
+   .map((x, y) => x + y * increment)
+}
+
 
 function App() {
 
@@ -41,8 +51,7 @@ function App() {
           )
         })
       }
-      
-      <Letter char="M" x={0} y={0}/>
+
     </>
   )
 }

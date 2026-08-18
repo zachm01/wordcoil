@@ -1,12 +1,15 @@
 import { Letter } from "./shapes/letter"
 import { Line, linspace } from "./shapes/line"
 import { Spiral } from "./shapes/spiral"
+import type { PuzzleParameters } from "./types"
 
-const spiralEndDegree = 360 * 4
-const spiralStartDegree = 360
-const spiralSize = 12
 
-const numSpokes = 8
+export const puzzleParams: PuzzleParameters = {
+  spiralStartDegree: 360,
+  spiralEndDegree: 360 * 4,
+  spiralSize: 12,
+  numSpokes: 8
+}
 
 export const center = {
   x: window.outerWidth / 2,
@@ -17,7 +20,7 @@ export const offset = {
   y: -43
 }
 
-function range(start: number, stop: number, step?: number) {
+export function range(start: number, stop: number, step?: number) {
   const increment = step ?? 1
   return Array(
     Math.ceil((stop - start) / increment)
@@ -26,21 +29,24 @@ function range(start: number, stop: number, step?: number) {
 }
 
 
-function DispLetters() {
-  const degreeStep = 360 / numSpokes
+function DispLetters(props: {longWord: string}) {
+  const degreeStep = 360 / puzzleParams.numSpokes
+  const maxLetters = range(puzzleParams.spiralStartDegree, puzzleParams.spiralEndDegree, degreeStep).length
+
+  let word = props.longWord.padEnd(maxLetters, " ")
 
   return (
     <>
       {
-        range(spiralStartDegree, spiralEndDegree, degreeStep).map(deg => {
+        range(puzzleParams.spiralStartDegree, puzzleParams.spiralEndDegree, degreeStep).map((deg, ix) => {
           const theta = (deg + degreeStep / 2) * Math.PI / 180
 
           return (
             <Letter
               key={deg}
-              char="M"
-              x={(spiralSize * theta - 40) * Math.cos(theta)}
-              y={(spiralSize * theta - 40) * Math.sin(theta)}
+              char={word[ix].toUpperCase()}
+              x={(puzzleParams.spiralSize * theta - 40) * Math.cos(theta)}
+              y={(puzzleParams.spiralSize * theta - 40) * Math.sin(theta)}
             />
           ) 
         })
@@ -55,27 +61,27 @@ function App() {
   return (
     <>
       <Spiral
-        size={spiralSize}
-        startDegree={spiralStartDegree}
-        endDegree={spiralEndDegree}
+        size={puzzleParams.spiralSize}
+        startDegree={puzzleParams.spiralStartDegree}
+        endDegree={puzzleParams.spiralEndDegree}
       />
 
       {
-        linspace(spiralEndDegree - 360, spiralEndDegree, numSpokes + 1).map(deg => {
+        linspace(puzzleParams.spiralEndDegree - 360, puzzleParams.spiralEndDegree, puzzleParams.numSpokes + 1).map(deg => {
           const theta = (deg) * Math.PI / 180
 
           return (
             <Line
               x0={0}
               y0={0}
-              x1={spiralSize * theta * Math.cos(theta)}
-              y1={spiralSize * theta * Math.sin(theta)}
+              x1={puzzleParams.spiralSize * theta * Math.cos(theta)}
+              y1={puzzleParams.spiralSize * theta * Math.sin(theta)}
             />
           )
         })
       }
 
-      <DispLetters/>
+      <DispLetters longWord="abcdefghijklmnopqrstuvwxyz"/>
     </>
   )
 }

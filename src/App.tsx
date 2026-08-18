@@ -1,4 +1,4 @@
-import { Letter } from "./shapes/letter"
+import { LetterDisplay } from "./letter_display"
 import { Line, linspace } from "./shapes/line"
 import { Spiral } from "./shapes/spiral"
 import type { PuzzleParameters } from "./types"
@@ -29,32 +29,6 @@ export function range(start: number, stop: number, step?: number) {
 }
 
 
-function DispLetters(props: {longWord: string}) {
-  const degreeStep = 360 / puzzleParams.numSpokes
-  const maxLetters = range(puzzleParams.spiralStartDegree, puzzleParams.spiralEndDegree, degreeStep).length
-
-  let word = props.longWord.padEnd(maxLetters, " ")
-
-  return (
-    <>
-      {
-        range(puzzleParams.spiralStartDegree, puzzleParams.spiralEndDegree, degreeStep).map((deg, ix) => {
-          const theta = (deg + degreeStep / 2) * Math.PI / 180
-
-          return (
-            <Letter
-              key={deg}
-              char={word[ix].toUpperCase()}
-              x={(puzzleParams.spiralSize * theta - 40) * Math.cos(theta)}
-              y={(puzzleParams.spiralSize * theta - 40) * Math.sin(theta)}
-            />
-          ) 
-        })
-      }
-    </>
-  )
-}
-
 
 function App() {
 
@@ -81,7 +55,7 @@ function App() {
         })
       }
 
-      <DispLetters longWord="abcdefghijklmnopqrstuvwxyz"/>
+      <LetterDisplay longWord="abcdefghijklmnopqrstuvwxyz"/>
     </>
   )
 }

@@ -10,7 +10,7 @@ export function Spiral(props: {weight?: number, size?: number, startDegree?: num
     <>
       {
         [...Array(endDegree * 2).keys()].map(deg => {
-          if (deg <= startDegree) { return }
+          if (deg / 2 <= startDegree) { return }
           
           const theta = (deg / 2) * Math.PI / 180
 
@@ -18,8 +18,8 @@ export function Spiral(props: {weight?: number, size?: number, startDegree?: num
             <Dot
               key={deg}
               diameter={weight}
-              y={size * theta * Math.sin(theta)}
               x={size * theta * Math.cos(theta)}
+              y={size * theta * Math.sin(theta)}
             />
           )
         })

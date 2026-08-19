@@ -2,8 +2,11 @@ import { puzzleParams } from "../math"
 import { Spiral } from "../shapes/spiral"
 import { SpiralSpokes } from "./spiral_spokes"
 import { LetterDisplay } from "./letter_display"
+import { useState } from "react"
 
 export function PuzzleBoard() {
+  const [word, setWord] = useState<string>("abcdefghijklmnopqrstuvwxyz")
+
   return (
     <>
       <Spiral
@@ -14,7 +17,7 @@ export function PuzzleBoard() {
 
       <SpiralSpokes/>
 
-      <LetterDisplay longWord="abcdefghijklmnopqrstuvwxyz"/> 
+      <LetterDisplay longWord={word} setWord={setWord}/> 
     </>
   )
 }

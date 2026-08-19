@@ -1,9 +1,14 @@
 import { puzzleParams, range } from "../math"
 import { Letter } from "../shapes/letter"
-import { useState } from "react";
 
-export function LetterDisplay(props: {longWord: string, setWord: React.Dispatch<React.SetStateAction<string>>}) {
-  const [selectedLetter, setSelectedLetter] = useState<number>(-1);
+
+export function LetterDisplay(props: {
+  longWord: string,
+  setWord: React.Dispatch<React.SetStateAction<string>>,
+  selectedLetter: number,
+  setSelectedLetter: React.Dispatch<React.SetStateAction<number>>
+}) {
+  const [selectedLetter, setSelectedLetter] = [props.selectedLetter, props.setSelectedLetter]
 
   const degreeStep = 360 / puzzleParams.numSpokes
   const maxLetters = range(puzzleParams.spiralStartDegree, puzzleParams.spiralEndDegree, degreeStep).length

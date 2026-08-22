@@ -2,6 +2,7 @@ import { puzzleParams } from "../math"
 import { Spiral } from "../shapes/spiral"
 import { SpiralSpokes } from "./spiral_spokes"
 import { LetterDisplay } from "./letter_display"
+import { NumberDisplay } from "./number_display"
 
 export function PuzzleBoard(props: {
   word: string,
@@ -44,6 +45,8 @@ export function PuzzleBoard(props: {
       <SpiralSpokes/>
 
       <LetterDisplay longWord={word} setWord={setWord} selectedLetter={props.selectedLetter} setSelectedLetter={props.setSelectedLetter}/>
+
+      <NumberDisplay/>
     </>
   )
 }

@@ -16,6 +16,12 @@ export interface LetterProps {
   offset?: {x: number, y: number}
 }
 
+export interface NumberProps {
+  num: number,
+  x: number,
+  y: number
+}
+
 export interface LineProps {
   x0: number,
   x1: number,

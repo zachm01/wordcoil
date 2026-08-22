@@ -16,6 +16,7 @@ export function LetterDisplay(props: {
   let word = props.longWord.padEnd(maxLetters, " ")
 
   const keydownHandler = (e: KeyboardEvent) => {
+    window.removeEventListener('keydown', keydownHandler)
     const advanceCursor = () => {
       selectedLetter === maxLetters - 1 ? setSelectedLetter(0) : setSelectedLetter(selectedLetter + 1)
     }
@@ -23,19 +24,19 @@ export function LetterDisplay(props: {
       selectedLetter === 0 ? setSelectedLetter(maxLetters - 1) : setSelectedLetter(selectedLetter - 1)
     }
     const replaceLetter = (char: string) => {
-      let newWord = props.longWord.substring(0, selectedLetter)
+      const newWord = props.longWord.substring(0, selectedLetter)
        + char.toUpperCase()
        + props.longWord.substring(selectedLetter + 1)
       props.setWord(newWord)
     }
 
 
-    if (e.key === "ArrowDown") { demoteCursor() }
+    if (e.key === "ArrowDown" || e.key === "ArrowLeft") { demoteCursor() }
     else if (e.key === "Backspace") {
       demoteCursor()
       replaceLetter(" ")
     }
-    else if (e.key === "ArrowUp") { advanceCursor() }
+    else if (e.key === "ArrowUp" || e.key === "ArrowRight") { advanceCursor() }
     else if (e.key === " ") {
       advanceCursor()
       replaceLetter(" ")

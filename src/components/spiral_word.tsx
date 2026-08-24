@@ -1,15 +1,17 @@
 import { range } from "../math"
 import type { PuzzleContext } from "../types"
+import puzzle from "../puzzle.json"
+
+const wordLength = puzzle.answer.length
 
 export function SpiralWord(props: {
   puzzleContext: PuzzleContext
-  length: number,
 }) {
   return (
     <div className="flex flex-col h-screen justify-end pb-3 bg-white">
       <div className="flex flex-row justify-center">
         {
-          range(0, props.length).map((_, ix) => {
+          range(0, wordLength).map((_, ix) => {
             return (
               <div
                 className={`text-2xl text-center w-8 h-12 p-1 py-2 ${ix == props.puzzleContext.selectedLetter ? "bg-yellow-300" : ""} cursor-pointer`}

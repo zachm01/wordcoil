@@ -4,9 +4,7 @@ import puzzle from "../puzzle.json"
 
 const wordLength = puzzle.answer.length
 
-export function SpiralWord(props: {
-  puzzleContext: PuzzleContext
-}) {
+export function SpiralWord(props: {puzzleContext: PuzzleContext}) {
   return (
     <div className="flex flex-col h-screen justify-end pb-3 bg-white">
       <div className="flex flex-row justify-center">

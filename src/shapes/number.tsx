@@ -1,5 +1,5 @@
 import { center, offset } from "../math"
-import type { NumberProps } from "./types"
+import type { NumberProps } from "./props"
 
 export function Number(props: NumberProps) {
   return (

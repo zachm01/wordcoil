@@ -1,5 +1,5 @@
 import { center, offset } from "../math"
-import type { DotProps } from "./types"
+import type { DotProps } from "./props"
 
 export function Dot(props: DotProps) {
   const radius = props.diameter / 2

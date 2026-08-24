@@ -1,5 +1,5 @@
 import { Dot } from "./dot"
-import type { SpiralProps } from "./types"
+import type { SpiralProps } from "./props"
 
 export function Spiral(props: SpiralProps) {
   const weight = props.weight ?? 5

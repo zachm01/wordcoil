@@ -1,5 +1,5 @@
 import { center, offset } from "../math"
-import type { LetterProps } from "./types"
+import type { LetterProps } from "./props"
 
 const DIAMETER = 30
 

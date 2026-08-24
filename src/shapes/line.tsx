@@ -1,6 +1,6 @@
 import { Dot } from "./dot"
 import { linspace } from "../math"
-import type { LineProps } from "./types"
+import type { LineProps } from "./props"
 
 export function XLine(props: {x0: number, x1: number, y?: number, weight?: number}) {
   const weight = props.weight ?? 5

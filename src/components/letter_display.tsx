@@ -3,9 +3,7 @@ import { Letter } from "../shapes/letter"
 import type { PuzzleContext } from "../types"
 
 
-export function LetterDisplay(props: {
-  puzzleContext: PuzzleContext
-}) {
+export function LetterDisplay(props: {puzzleContext: PuzzleContext}) {
   const [selectedLetter, setSelectedLetter] = [props.puzzleContext.selectedLetter, props.puzzleContext.setSelectedLetter]
 
   const degreeStep = 360 / puzzleParams.numSpokes

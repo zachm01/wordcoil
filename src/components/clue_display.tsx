@@ -1,16 +1,17 @@
 import puzzle from "../puzzle.json"
+import type { PuzzleContext } from "../types"
 
-export function ClueDisplay(props: {selectedLetter: number, setSelectedLetter: React.Dispatch<React.SetStateAction<number>>}) {
+export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
   return (
     <>
       {
         puzzle.clues.map(clue => {
           return (
             <div onClick={() => {
-              if (props.selectedLetter != clue.char) {
-                props.setSelectedLetter(clue.char)
+              if (props.puzzleContext.selectedLetter != clue.char) {
+                props.puzzleContext.setSelectedLetter(clue.char)
               } else {
-                props.setSelectedLetter(-1)
+                props.puzzleContext.setSelectedLetter(-1)
               }
             }}
             >

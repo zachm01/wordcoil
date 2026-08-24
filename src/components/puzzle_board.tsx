@@ -3,12 +3,10 @@ import { Spiral } from "../shapes/spiral"
 import { SpiralSpokes } from "./spiral_spokes"
 import { LetterDisplay } from "./letter_display"
 import { NumberDisplay } from "./number_display"
+import type { PuzzleContext } from "../types"
 
 export function PuzzleBoard(props: {
-  word: string,
-  setWord: React.Dispatch<React.SetStateAction<string>>,
-  selectedLetter: number,
-  setSelectedLetter: React.Dispatch<React.SetStateAction<number>>
+  puzzleContext: PuzzleContext
 }) {
   // all that glitters is not gold
   // absolute temperature scale
@@ -31,9 +29,6 @@ export function PuzzleBoard(props: {
   //  -> internal combustion engine
   //  -> lactobacillus acidophilus
 
-  const word = props.word
-  const setWord = props.setWord
-
   return (
     <>
       <Spiral
@@ -44,7 +39,7 @@ export function PuzzleBoard(props: {
 
       <SpiralSpokes/>
 
-      <LetterDisplay longWord={word} setWord={setWord} selectedLetter={props.selectedLetter} setSelectedLetter={props.setSelectedLetter}/>
+      <LetterDisplay puzzleContext={props.puzzleContext}/>
 
       <NumberDisplay/>
     </>

@@ -1,19 +1,17 @@
 import { puzzleParams, range } from "../math"
 import { Letter } from "../shapes/letter"
+import type { PuzzleContext } from "../types"
 
 
 export function LetterDisplay(props: {
-  longWord: string,
-  setWord: React.Dispatch<React.SetStateAction<string>>,
-  selectedLetter: number,
-  setSelectedLetter: React.Dispatch<React.SetStateAction<number>>
+  puzzleContext: PuzzleContext
 }) {
-  const [selectedLetter, setSelectedLetter] = [props.selectedLetter, props.setSelectedLetter]
+  const [selectedLetter, setSelectedLetter] = [props.puzzleContext.selectedLetter, props.puzzleContext.setSelectedLetter]
 
   const degreeStep = 360 / puzzleParams.numSpokes
   const maxLetters = range(puzzleParams.spiralStartDegree, puzzleParams.spiralEndDegree, degreeStep).length
 
-  let word = props.longWord.padEnd(maxLetters, " ")
+  let word = props.puzzleContext.word.padEnd(maxLetters, " ")
 
   const keydownHandler = (e: KeyboardEvent) => {
     window.removeEventListener('keydown', keydownHandler)
@@ -24,10 +22,10 @@ export function LetterDisplay(props: {
       selectedLetter === 0 ? setSelectedLetter(maxLetters - 1) : setSelectedLetter(selectedLetter - 1)
     }
     const replaceLetter = (char: string) => {
-      const newWord = props.longWord.substring(0, selectedLetter)
+      const newWord = props.puzzleContext.word.substring(0, selectedLetter)
        + char.toUpperCase()
-       + props.longWord.substring(selectedLetter + 1)
-      props.setWord(newWord)
+       + props.puzzleContext.word.substring(selectedLetter + 1)
+      props.puzzleContext.setWord(newWord)
     }
 
 

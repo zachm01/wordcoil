@@ -1,4 +1,10 @@
 {
+  "dimensions": {
+    "spiral_start_degree": 360,
+    "spiral_end_degree": 1440,
+    "spiral_size": 12,
+    "num_spokes": 8
+  },
   "answer": "firstlawofthermodynamics",
   "clues": [
     {

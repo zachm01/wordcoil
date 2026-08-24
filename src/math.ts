@@ -1,10 +1,11 @@
 import type { PuzzleParameters } from "./types"
+import puzzle from "./puzzle.json"
 
 export const puzzleParams: PuzzleParameters = {
-  spiralStartDegree: 360,
-  spiralEndDegree: 360 * 4,
-  spiralSize: 12,
-  numSpokes: 8
+  spiralStartDegree: puzzle.dimensions.spiral_start_degree,
+  spiralEndDegree: puzzle.dimensions.spiral_end_degree,
+  spiralSize: puzzle.dimensions.spiral_size,
+  numSpokes: puzzle.dimensions.num_spokes
 }
 
 export const center = {

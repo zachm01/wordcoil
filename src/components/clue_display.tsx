@@ -27,7 +27,10 @@ export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
                   }
                 }}
               >
-                {clue.number}. {clue.text}
+                <div className="flex flex-row gap-x-1">
+                  <span className="w-5 flex flex-row justify-end">{clue.number}.</span>
+                  <span>{clue.text}</span>
+                </div>
               </div>
             )
           })

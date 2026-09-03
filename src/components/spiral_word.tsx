@@ -6,7 +6,7 @@ const wordLength = puzzle.answer.length
 
 export function SpiralWord(props: {puzzleContext: PuzzleContext}) {
   return (
-    <div className="flex flex-col h-screen justify-end pb-3 bg-white">
+    <div style={{position: "absolute", bottom: 0}} className="w-screen pb-3">
       <div className="flex flex-row justify-center">
         {
           range(0, wordLength).map((_, ix) => {

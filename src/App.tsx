@@ -21,7 +21,9 @@ function App() {
       }}>
         <ClueDisplay puzzleContext={puzzleContext}/>
       </div>
-      <PuzzleBoard puzzleContext={puzzleContext}/>
+      <div style={{position: "relative"}}>
+        <PuzzleBoard puzzleContext={puzzleContext}/>
+      </div>
       <SpiralWord puzzleContext={puzzleContext}/>
 
     </>

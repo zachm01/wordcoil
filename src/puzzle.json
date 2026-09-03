@@ -17,49 +17,49 @@
       "char": 16,
       "direction": "outwards",
       "number": 1,
-      "text": "[O] Bird strike wreckage, e.g."
+      "text": "Bird strike wreckage, e.g."
     },
     {
       "char": 17,
       "direction": "outwards",
       "number": 2,
-      "text": "[O] Stand-up comic Nwadiwe"
+      "text": "Stand-up comic Nwadiwe"
     },
     {
       "char": 18,
       "direction": "outwards",
       "number": 3,
-      "text": "[O] 9-digit code on cheques"
+      "text": "9-digit code on cheques"
     },
     {
       "char": 19,
       "direction": "inwards",
       "number": 4,
-      "text": "[I] Oohs accompanists"
+      "text": "Oohs accompanists"
     },
     {
       "char": 20,
       "direction": "inwards",
       "number": 5,
-      "text": "[I] NYC art museum"
+      "text": "NYC art museum"
     },
     {
       "char": 21,
       "direction": "inwards",
       "number": 6,
-      "text": "[I] AFK, so to speak"
+      "text": "AFK, so to speak"
     },
     {
       "char": 22,
       "direction": "outwards",
       "number": 7,
-      "text": "[O] World's largest cinema chain"
+      "text": "World's largest cinema chain"
     },
     {
       "char": 23,
       "direction": "inwards",
       "number": 8,
-      "text": "[I] Plant seeds"
+      "text": "Plant seeds"
     }
   ]
 }

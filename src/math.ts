@@ -15,7 +15,7 @@ export const center = {
 
 export const offset = {
   x: -18,
-  y: -43
+  y: -120
 }
 
 export function range(start: number, stop: number, step?: number) {

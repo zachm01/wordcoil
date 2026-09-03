@@ -16,9 +16,11 @@ function App() {
 
   return (
     <>
-      <div style={{
-        "float": "right"
-      }}>
+      <div className="border-black border-b-2 h-[4rem] text-2xl font-bold flex items-center p-4">wordcoil</div>
+      <div
+        className="m-10" 
+        style={{"float": "right"}}
+      >
         <ClueDisplay puzzleContext={puzzleContext}/>
       </div>
       <div style={{position: "relative"}}>

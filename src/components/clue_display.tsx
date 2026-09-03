@@ -3,7 +3,7 @@ import type { PuzzleContext } from "../types"
 
 export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
   return (
-    <>
+    <div className="flex flex-col gap-y-1 justify-center">
       {
         puzzle.clues.map(clue => {
           return (
@@ -12,7 +12,8 @@ export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
                 props.puzzleContext.selectedLetter == clue.char ||
                 props.puzzleContext.selectedLetter == clue.char - 8 ||
                 props.puzzleContext.selectedLetter == clue.char - 16
-                 ? "bg-yellow-300" : ""}
+                 ? "bg-yellow-300" : ""
+              }
               onClick={() => {
                 if (props.puzzleContext.selectedLetter != clue.char) {
                   props.puzzleContext.setSelectedLetter(clue.char)
@@ -26,6 +27,6 @@ export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
           )
         })
       }
-    </>
+    </div>
   )
 }

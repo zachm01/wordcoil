@@ -8,14 +8,49 @@
   "answer": "firstlawofthermodynamics",
   "clues": [
     {
+      "number": 0,
+      "char": -1,
+      "text": "Conservation of energy"
+    },
+    {
       "number": 1,
       "char": 16,
-      "text": "Foreign object debris"
+      "text": "[O] Bird strike wreckage, e.g."
     },
     {
       "number": 2,
       "char": 17,
-      "text": "Nwadiwe"
+      "text": "[O] Stand-up comic Nwadiwe"
+    },
+    {
+      "number": 3,
+      "char": 18,
+      "text": "[O] 9-digit code on cheques"
+    },
+    {
+      "number": 4,
+      "char": 19,
+      "text": "[I] Oohs accompanists"
+    },
+    {
+      "number": 5,
+      "char": 20,
+      "text": "[I] NYC art museum"
+    },
+    {
+      "number": 6,
+      "char": 21,
+      "text": "[I] AFK, so to speak"
+    },
+    {
+      "number": 7,
+      "char": 22,
+      "text": "[O] World's largest cinema chain"
+    },
+    {
+      "number": 8,
+      "char": 23,
+      "text": "[I] Plant seeds"
     }
   ]
 }

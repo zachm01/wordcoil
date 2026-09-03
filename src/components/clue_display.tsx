@@ -7,17 +7,17 @@ export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
 
   return (
     <div className="flex flex-col justify-center">
-      <div className="flex flex-col justify-center m-10">
+      <div className="flex flex-col justify-center gap-y-2 m-10">
         {
           directions.map(direction => {
             return (
-              <>
+              <div>
                 <div className="font-bold italic">
                   {direction.toUpperCase()}
                 </div>
                 {
                   puzzle.clues.filter(clue => clue.direction === direction).map(clue => {
-                    if (clue.number === 0) { return }
+                    if (clue.number === 0) { return (<>{clue.text}</>) }
             
                     const highlighted = props.puzzleContext.selectedLetter == clue.char ||
                     props.puzzleContext.selectedLetter == clue.char - 8 ||
@@ -42,22 +42,6 @@ export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
                     )
                   })
                 }
-              </>
-            )
-          })
-        }
-      </div>
-      <div className="flex flex-col justify-center mx-10">
-        {
-          puzzle.clues.map(clue => {
-            if (clue.number !== 0) { return }
-
-            return (
-              <div>
-                <div className="font-bold italic">
-                  PUZZLE CLUE
-                </div>
-                {clue.text}
               </div>
             )
           })

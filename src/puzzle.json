@@ -9,7 +9,7 @@
   "clues": [
     {
       "char": -1,
-      "direction": "",
+      "direction": "PUZZLE CLUE",
       "number": 0,
       "text": "Conservation of energy"
     },

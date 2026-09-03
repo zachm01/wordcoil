@@ -2,36 +2,47 @@ import puzzle from "../puzzle.json"
 import type { PuzzleContext } from "../types"
 
 export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
+  let directions = puzzle.clues.map(clue => clue.direction)
+  directions = Array.from([...new Set(directions)]).toSorted()
+
   return (
     <div className="flex flex-col justify-center">
       <div className="flex flex-col justify-center m-10">
-        <div className="font-bold italic">
-          Inwards & Outwards
-        </div>
         {
-          puzzle.clues.map(clue => {
-            if (clue.number === 0) { return }
-            
-            const highlighted = props.puzzleContext.selectedLetter == clue.char ||
-            props.puzzleContext.selectedLetter == clue.char - 8 ||
-            props.puzzleContext.selectedLetter == clue.char - 16
-            
+          directions.map(direction => {
             return (
-              <div 
-                className={`p-1 ${highlighted ? "bg-yellow-300" : ""}`}
-                onClick={() => {
-                  if (props.puzzleContext.selectedLetter != clue.char) {
-                    props.puzzleContext.setSelectedLetter(clue.char)
-                  } else {
-                    props.puzzleContext.setSelectedLetter(-1)
-                  }
-                }}
-              >
-                <div className="flex flex-row gap-x-1">
-                  <span className="w-5 flex flex-row justify-end">{clue.number}.</span>
-                  <span>{clue.text}</span>
+              <>
+                <div className="font-bold italic">
+                  {direction.toUpperCase()}
                 </div>
-              </div>
+                {
+                  puzzle.clues.filter(clue => clue.direction === direction).map(clue => {
+                    if (clue.number === 0) { return }
+            
+                    const highlighted = props.puzzleContext.selectedLetter == clue.char ||
+                    props.puzzleContext.selectedLetter == clue.char - 8 ||
+                    props.puzzleContext.selectedLetter == clue.char - 16
+                    
+                    return (
+                      <div 
+                        className={`p-1 ${highlighted ? "bg-yellow-300" : ""}`}
+                        onClick={() => {
+                          if (props.puzzleContext.selectedLetter != clue.char) {
+                            props.puzzleContext.setSelectedLetter(clue.char)
+                          } else {
+                            props.puzzleContext.setSelectedLetter(-1)
+                          }
+                        }}
+                      >
+                        <div className="flex flex-row gap-x-1">
+                          <span className="w-5 flex flex-row justify-end">{clue.number}.</span>
+                          <span>{clue.text}</span>
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+              </>
             )
           })
         }
@@ -44,7 +55,7 @@ export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
             return (
               <div>
                 <div className="font-bold italic">
-                  Puzzle Clue
+                  PUZZLE CLUE
                 </div>
                 {clue.text}
               </div>

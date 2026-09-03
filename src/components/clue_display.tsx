@@ -3,7 +3,7 @@ import type { PuzzleContext } from "../types"
 
 export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
   return (
-    <div className="flex flex-col gap-y-1 justify-center">
+    <div className="flex flex-col gap-y-1 justify-center m-10">
       {
         puzzle.clues.map(clue => {
           return (

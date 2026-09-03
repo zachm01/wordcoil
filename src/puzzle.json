@@ -8,48 +8,57 @@
   "answer": "firstlawofthermodynamics",
   "clues": [
     {
-      "number": 0,
       "char": -1,
+      "direction": "",
+      "number": 0,
       "text": "Conservation of energy"
     },
     {
-      "number": 1,
       "char": 16,
+      "direction": "outwards",
+      "number": 1,
       "text": "[O] Bird strike wreckage, e.g."
     },
     {
-      "number": 2,
       "char": 17,
+      "direction": "outwards",
+      "number": 2,
       "text": "[O] Stand-up comic Nwadiwe"
     },
     {
-      "number": 3,
       "char": 18,
+      "direction": "outwards",
+      "number": 3,
       "text": "[O] 9-digit code on cheques"
     },
     {
-      "number": 4,
       "char": 19,
+      "direction": "inwards",
+      "number": 4,
       "text": "[I] Oohs accompanists"
     },
     {
-      "number": 5,
       "char": 20,
+      "direction": "inwards",
+      "number": 5,
       "text": "[I] NYC art museum"
     },
     {
-      "number": 6,
       "char": 21,
+      "direction": "inwards",
+      "number": 6,
       "text": "[I] AFK, so to speak"
     },
     {
-      "number": 7,
       "char": 22,
+      "direction": "outwards",
+      "number": 7,
       "text": "[O] World's largest cinema chain"
     },
     {
-      "number": 8,
       "char": 23,
+      "direction": "inwards",
+      "number": 8,
       "text": "[I] Plant seeds"
     }
   ]

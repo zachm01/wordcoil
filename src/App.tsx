@@ -8,7 +8,7 @@ import { Dialog } from "./components/dialog"
 
 
 function App() {
-  const [word, setWord] = useState<string>("")
+  const [word, setWord] = useState<string>(" ".repeat(puzzle.answer.length))
   const [selectedLetter, setSelectedLetter] = useState<number>(-1)
   const [showFinishedDialog, setShowFinishedDialog] = useState<boolean>(true)
 

@@ -36,7 +36,7 @@ export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
             const directionColor = letterColorSets[ix]
 
             return (
-              <div>
+              <div key={ix}>
                 <div
                   style={{backgroundColor: directionColor}}
                   className="px-1 font-bold italic"
@@ -44,15 +44,16 @@ export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
                   {direction.toUpperCase()}
                 </div>
                 {
-                  puzzle.clues.filter(clue => clue.direction === direction).map(clue => {
+                  puzzle.clues.filter(clue => clue.direction === direction).map((clue, ix) => {
                     if (clue.number === 0) { return (
-                      <div className="px-6">{clue.text}</div>
+                      <div key={ix} className="px-6">{clue.text}</div>
                     ) }
             
                     const highlighted = charBelongsToClue(props.puzzleContext.selectedLetter, clue.char)
                     
                     return (
                       <div 
+                        key={ix}
                         className={`p-1 cursor-pointer ${highlighted ? "bg-yellow-300" : ""}`}
                         onClick={() => {
                           if (props.puzzleContext.selectedLetter != clue.char) {

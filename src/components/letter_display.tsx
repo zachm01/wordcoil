@@ -89,6 +89,7 @@ export function LetterDisplay(props: {puzzleContext: PuzzleContext}) {
 
           return (
             <div
+              key={ix}
               onClick={() => ix === selectedLetter ? setSelectedLetter(-1) : setSelectedLetter(ix)}
             >
               <Letter

@@ -12,6 +12,7 @@ export function SpiralWord(props: {puzzleContext: PuzzleContext}) {
           range(0, wordLength).map((_, ix) => {
             return (
               <div
+                key={ix}
                 className={`text-2xl text-center w-8 h-12 p-1 py-2 ${ix == props.puzzleContext.selectedLetter ? "bg-yellow-300" : ""} cursor-pointer`}
                 onClick={() => props.puzzleContext.selectedLetter === ix ? props.puzzleContext.setSelectedLetter(-1) : props.puzzleContext.setSelectedLetter(ix)}
               >

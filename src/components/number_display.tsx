@@ -10,6 +10,7 @@ export function NumberDisplay() {
 
           return (
             <Number
+              key={ix}
               x={(puzzleParams.spiralSize - 0.7) * theta * Math.cos(theta)}
               y={(puzzleParams.spiralSize - 0.7) * theta * Math.sin(theta)}
               num={ix}

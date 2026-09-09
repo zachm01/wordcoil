@@ -5,61 +5,61 @@
     "spiral_size": 13,
     "num_spokes": 8
   },
-  "answer": "firstlawofthermodynamics",
+  "answer": "........................",
   "clues": [
     {
       "char": -1,
       "direction": "PUZZLE CLUE",
       "number": 0,
-      "text": "Conservation of energy"
+      "text": "[...]"
     },
     {
       "char": 0,
       "direction": "outwards",
       "number": 1,
-      "text": "Bird strike wreckage, e.g."
+      "text": "[...]"
     },
     {
       "char": 1,
       "direction": "outwards",
       "number": 2,
-      "text": "Stand-up comic Nwadiwe"
+      "text": "[...]"
     },
     {
       "char": 2,
       "direction": "outwards",
       "number": 3,
-      "text": "9-digit code on cheques"
+      "text": "[...]"
     },
     {
       "char": 19,
       "direction": "inwards",
       "number": 4,
-      "text": "Oohs accompanists"
+      "text": "[...]"
     },
     {
       "char": 20,
       "direction": "inwards",
       "number": 5,
-      "text": "Convened"
+      "text": "[...]"
     },
     {
       "char": 21,
       "direction": "inwards",
       "number": 6,
-      "text": "In the meatspace, for short"
+      "text": "[...]"
     },
     {
       "char": 6,
       "direction": "outwards",
       "number": 7,
-      "text": "World's largest cinema chain"
+      "text": "[...]"
     },
     {
       "char": 23,
       "direction": "inwards",
       "number": 8,
-      "text": "Plant seeds"
+      "text": "[...]"
     }
   ]
 }

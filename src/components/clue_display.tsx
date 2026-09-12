@@ -49,7 +49,13 @@ export function ClueDisplay(props: {puzzleContext: PuzzleContext}) {
                       <div key={ix} className="px-6">{clue.text}</div>
                     ) }
             
-                    const highlighted = charBelongsToClue(props.puzzleContext.selectedLetter, clue.char)
+                    const belongsToClue = charBelongsToClue(props.puzzleContext.selectedLetter, clue.char)
+
+                    if (belongsToClue) {
+                      props.puzzleContext.setCurrentClue(clue)
+                    }
+
+                    const highlighted = belongsToClue
                     
                     return (
                       <div 

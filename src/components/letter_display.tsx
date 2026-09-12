@@ -90,7 +90,14 @@ export function LetterDisplay(props: {puzzleContext: PuzzleContext}) {
           return (
             <div
               key={ix}
-              onClick={() => ix === selectedLetter ? setSelectedLetter(-1) : setSelectedLetter(ix)}
+              onClick={() => {
+                if (ix === selectedLetter) {
+                  setSelectedLetter(-1)
+                  props.puzzleContext.setCurrentClue(undefined)
+                } else {
+                  setSelectedLetter(ix)
+                }
+              }}
             >
               <Letter
                 key={deg}
